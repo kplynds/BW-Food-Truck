@@ -63,7 +63,7 @@ const Login = () => {
             <div>Login</div>
             <form onSubmit={onSubmit}>
                 <label htmlFor='name'>
-                    Name:&nbsp;
+                    Username:&nbsp;
                     <input
                     type='text'
                     name='username'
