@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import PrivateRoute from './utils/PrivateRoute';
 // import private route
 
 //components
@@ -25,7 +26,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/dashboard' component={DashBoard} />
+          <PrivateRoute exact path='/dashboard' component={DashBoard} />
         </Switch>
       </>
     </div>
