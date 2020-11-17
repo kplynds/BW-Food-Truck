@@ -159,7 +159,7 @@ const Register = () => {
               <h2>Email:</h2>
             </div>
             <input
-              placeholder="email"
+              placeholder={formErrors.email}
               type="email"
               name="email"
               value={formValues.email}
@@ -223,6 +223,10 @@ const Signup = styled.div`
   h2 {
     font-family: sans-serif;
     color: ${(pr) => pr.theme.teritaryColor};
+    background: ${(pr) => pr.theme.teritary};
+    border-radius: 2px;
+    width: 45%;
+    margin: auto;
   }
 
   input,
