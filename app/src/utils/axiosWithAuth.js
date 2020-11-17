@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 export const axiosWithAuth = () => {
-    const token =window.localStorage.getItem('token')
+    const token = localStorage.getItem('token');
     return axios.create({
+        baseURL: 'https://food-truck-trackr-api.herokuapp.com',
         headers: {
-            Authorization: token
+            'authorization': `Bearer ${token}`,
         },
-        baseURL: 'http://localhost:5000/api'
+        
     })
 }
