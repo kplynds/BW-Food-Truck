@@ -187,7 +187,6 @@ const Signup = styled.div`
   h2 {
     font-family: sans-serif;
     color:${(pr) => pr.theme.teritaryColor};
-    text-shadow:2px 4px 10px 2px;
   }
 
   }
