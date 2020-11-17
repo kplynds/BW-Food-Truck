@@ -146,7 +146,7 @@ const Register = () => {
             </div>
             <input
               placeholder="password"
-              type="text"
+              type="password"
               name="password"
               value={formValues.passowrd}
               onChange={handleChange}
