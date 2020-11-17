@@ -1,28 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import "./index.css";
+import App from "./App";
+import theme from "./theme";
 
+const reducer = () => {};
 
-import './index.css';
-import App from './App';
-
-const reducer = () => {
-   
-}
-
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-    <App />
-    </Router>
-  </Provider>,
-  document.getElementById('root')
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </ThemeProvider>,
+  document.getElementById("root")
 );
-
-
