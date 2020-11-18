@@ -20,7 +20,7 @@ const Home = () => {
             <img src='' className="homeImg" />
             <div className="txt rightTxt">
             <p className="caption">
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+                lorem ipsom lorem ipsom lorem ipsom
                 lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
                 lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
              </p>
