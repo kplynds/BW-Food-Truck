@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import formSchema from "../registration/registerSchema";
+import * as yup from "yup";
 
 const initialFormValues = {
+  roleId: "",
+  email: "",
+  username: "",
+  password: "",
+};
+const initialFormErrors = {
   roleId: "",
   email: "",
   username: "",
@@ -13,14 +21,38 @@ const initialFormValues = {
 const Register = () => {
   const history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    formSchema
+      .isValid(formValues)
+      .then((valid) => setDisabled(!valid))
+      .catch((err) => alert(err));
+  }, [formValues]);
 
   const handleChange = (e) => {
-    if (e.target.type === "checkbox") {
-      e.target.value = e.target.checked;
-    }
+    const name = e.target.name;
+    const value = e.target.value;
+
+    yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then((valid) => {
+        setFormErrors({
+          ...formErrors,
+          [name]: "",
+        });
+      })
+      .catch((err) => {
+        setFormErrors({
+          ...formErrors,
+          [name]: err.errors[0],
+        });
+      });
     setFormValues({
       ...formValues,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -98,6 +130,12 @@ const Register = () => {
   };
   return (
     <Signup>
+      <Errors>
+        <div className="roleError">{formErrors.roleId}</div>
+        <div className="emailError">{formErrors.email}</div>
+        <div className="nameError">{formErrors.username}</div>
+        <div className="passwordError">{formErrors.password}</div>
+      </Errors>
       <form onSubmit={submit}>
         <h1>SIGN UP</h1>
         <label>
@@ -121,8 +159,8 @@ const Register = () => {
               <h2>Email:</h2>
             </div>
             <input
-              placeholder="email"
-              type="text"
+              placeholder={formErrors.email}
+              type="email"
               name="email"
               value={formValues.email}
               onChange={handleChange}
@@ -148,28 +186,26 @@ const Register = () => {
               placeholder="password"
               type="password"
               name="password"
-              value={formValues.passowrd}
+              value={formValues.password}
               onChange={handleChange}
             />
           </label>
-          <Button>Submit</Button>
+          <Button disabled={disabled}>Submit</Button>
         </div>
       </form>
     </Signup>
   );
 };
 const Button = styled.button`
-width:45%;
+  width: 45%;
   color: ${(pr) => pr.theme.black};
-  font-weight:900;
+  font-weight: 900;
   background: ${(pr) => pr.theme.teritaryColor};
   margin-top: 15px;
   padding: 4%;
-  border-radius:2px;
-  border:1px solid ${(pr) => pr.theme.black};
-  box-shadow:2px 4px 10px 2px;
-  }
-  
+  border-radius: 2px;
+  border: 1px solid ${(pr) => pr.theme.black};
+  box-shadow: 2px 4px 10px 2px;
 `;
 
 const Signup = styled.div`
@@ -181,17 +217,20 @@ const Signup = styled.div`
   margin: auto;
   padding: 5%;
   border-radius: 2%;
-  border:1px solid ${(pr) => pr.theme.primary};
-  box-shadow:2px 4px 15px 2px;
+  border: 1px solid ${(pr) => pr.theme.primary};
+  box-shadow: 2px 4px 15px 2px;
 
   h2 {
     font-family: sans-serif;
-    color:${(pr) => pr.theme.teritaryColor};
+    color: ${(pr) => pr.theme.teritaryColor};
+    background: ${(pr) => pr.theme.teritary};
+    border-radius: 2px;
+    width: 45%;
+    margin: auto;
   }
 
-  }
-
-  input, select{
+  input,
+  select {
     font-size: 20px;
     outline: 0;
     transition: all 0.9s;
@@ -205,5 +244,10 @@ const Signup = styled.div`
       border: none;
     }
   }
+`;
+const Errors = styled.div`
+  padding: 2% 0;
+  background: ${(pr) => pr.theme.white};
+  color: ${(pr) => pr.theme.danger};
 `;
 export default Register;

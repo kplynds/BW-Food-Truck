@@ -1,5 +1,5 @@
 //theme object
-export default {
+const theme = {
   primaryColor: "#bf8124",
   primary: "#fff",
   secondaryColor: "#fbead2",
@@ -10,3 +10,5 @@ export default {
   black: "#3f3f3f",
   white: "#fff9f0",
 };
+
+export default theme;
