@@ -18,6 +18,7 @@ const initialFormErrors = {
   password: "",
 };
 
+
 const Register = () => {
   const history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -25,9 +26,12 @@ const Register = () => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
+    console.log('The form has recieved a change thru input')
     formSchema
       .isValid(formValues)
-      .then((valid) => setDisabled(!valid))
+      .then((valid) =>{
+        setDisabled(!valid);
+      })
       .catch((err) => alert(err));
   }, [formValues]);
 
