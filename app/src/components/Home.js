@@ -15,14 +15,28 @@ const Home = () => {
             </Link>
           </button>
         </div>
-
-        <div className="homeImg">img</div>
-        <div className="txt rightTxt">
-          <p>lorem ipsom</p>
+        <div class ="imgTextPairContainer">
+            <img src='' className="homeImg" />
+            <img src='' className="homeImg" />
+            <div className="txt rightTxt">
+            <p className="caption">
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+             </p>
+            </div>
         </div>
-        <div className="homeImg">img</div>
-        <div className="txt leftTxt">
-          <p>lorem ipsom</p>
+        <div class ="imgTextPairContainer">
+        <div className="txt rightTxt">
+        
+            <p className="caption">
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+            </p>
+        </div>
+            <img src='' className="homeImg" />
+            <img src='' className="homeImg" />
         </div>
       </div>
       {/* <img className="logo" src={img} alt=""></img> */}
@@ -36,13 +50,13 @@ display: flex;
 flex-direction:column;
   justify-content: center;
   margin:auto;
-  margin-top:10%;
+  margin-top: 3%;
   .head{
       width:80%;
       margin:auto;
       display:flex;
       flex-direction:column;
-      height:40vh;
+      height: 12vh;
   }
 
   .container{
@@ -52,17 +66,54 @@ flex-direction:column;
       margin:auto;
   }
 
-  .homeImg{
-      width:65%;
-      display:flex;
-border:1px solid black;
-  }
   .txt{
       display:flex;
-      width:20%;
-      border:1px solid red;
+      width:40%;
   }
   
+  .imgTextPairContainer{
+      width: 100%;
+      height: 35vh;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+      display: flex;
+      margin: 2% 0%;
+  }
 
+  .homeImg{
+    height: 100%;
+    width: 30.1%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    display: flex;
+  }
+
+  .caption{
+    padding: 20% 0%;
+    height: 100%;
+    font-size: 120%;
+    width: 100%;
+  }
 `;
+
+const ImgOne = styles.img`
+  height: 100%;
+  width: 30.1%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  display: flex;
+`;
+const ImgTwo = styles.img`
+width: 300px;
+height: 300px;
+border-style: solid;
+border-width: 7px;
+border-color: black;
+display: flex;
+`;
+
+
 export default Home;
