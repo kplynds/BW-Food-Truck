@@ -10,5 +10,4 @@ const theme = {
   black: "#3f3f3f",
   white: "#fff9f0",
 };
-
-export default theme;
+export default theme

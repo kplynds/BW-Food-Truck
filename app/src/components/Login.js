@@ -14,6 +14,7 @@ const Login = (props) => {
     const history = useHistory();
 
     const [formValues, setFormValues] = useState(initialFormValues);
+    // const [error, setError] = useState("")
     
       const handleChange = (e) => {
         setFormValues({
@@ -28,9 +29,14 @@ const Login = (props) => {
           .post('https://food-truck-trackr-api.herokuapp.com/api/auth/login', formValues)
           .then((res) => {
             console.log(res);
+            if (res.data.type === 'diner') {
+              localStorage.setItem('user', res.data.diner.dinerId)
+            }
+            if (res.data.type === 'operator') {
+              localStorage.setItem('user', res.data.operator.operatorId)
+            }
             localStorage.setItem('roleId', res.data.type)
             localStorage.setItem('token', res.data.token)
-            setFormValues(initialFormValues);
             history.push('/dashboard')
             // need some if + then logic to decide which endpoint to sent post request to 
 
@@ -38,7 +44,7 @@ const Login = (props) => {
             // props.history.push("/bubblepage");
           })
           .catch((err) => {
-            console.log(`this is the error: ${err}`);
+            console.log(err);
           });
       };
       return (
