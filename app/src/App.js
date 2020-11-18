@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import DashBoard from "./components/authenticated/DashBoard";
+import NewTruck from './components/authenticated/NewTruck';
 
 import "./App.css";
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <PrivateRoute exact path="/dashboard" component={DashBoard} />
+          <PrivateRoute exact path="/newtruck" component={NewTruck} />
         </Switch>
       </>
     </div>
