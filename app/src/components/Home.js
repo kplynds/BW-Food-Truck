@@ -15,28 +15,27 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <div class ="imgTextPairContainer">
-            <img src='' className="homeImg" />
-            <img src='' className="homeImg" />
-            <div className="txt rightTxt">
+        <div className="imgTextPairContainer">
+          <img src="" alt="alt" className="homeImg" />
+          <img src="" alt="alt" className="homeImg" />
+          <div className="txt rightTxt">
             <p className="caption">
-                lorem ipsom lorem ipsom lorem ipsom
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
-             </p>
-            </div>
-        </div>
-        <div class ="imgTextPairContainer">
-        <div className="txt rightTxt">
-        
-            <p className="caption">
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
-                lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom 
+              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem
+              ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+              lorem ipsom lorem ipsom lorem ipsom lorem ipsom
             </p>
+          </div>
         </div>
-            <img src='' className="homeImg" />
-            <img src='' className="homeImg" />
+        <div className="imgTextPairContainer">
+          <div className="txt rightTxt">
+            <p className="caption">
+              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem
+              ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+            </p>
+          </div>
+          <img src="" alt="alt" className="homeImg" />
+          <img src="" alt="alt" className="homeImg" />
         </div>
       </div>
       {/* <img className="logo" src={img} alt=""></img> */}
@@ -98,22 +97,21 @@ flex-direction:column;
   }
 `;
 
-const ImgOne = styles.img`
-  height: 100%;
-  width: 30.1%;
-  border-style: solid;
-  border-width: 4px;
-  border-color: black;
-  display: flex;
-`;
-const ImgTwo = styles.img`
-width: 300px;
-height: 300px;
-border-style: solid;
-border-width: 7px;
-border-color: black;
-display: flex;
-`;
-
+// const ImgOne = styles.img`
+//   height: 100%;
+//   width: 30.1%;
+//   border-style: solid;
+//   border-width: 4px;
+//   border-color: black;
+//   display: flex;
+// `;
+// const ImgTwo = styles.img`
+// width: 300px;
+// height: 300px;
+// border-style: solid;
+// border-width: 7px;
+// border-color: black;
+// display: flex;
+// `;
 
 export default Home;
