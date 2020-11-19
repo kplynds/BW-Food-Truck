@@ -11,31 +11,29 @@ const Home = () => {
 
           <button>
             <Link className="link" to="">
-              lorem ipsom{" "}
+              Very Dank Food{" "}
             </Link>
           </button>
         </div>
         <div className="imgTextPairContainer">
-          <img src="" alt="alt" className="homeImg" />
-          <img src="" alt="alt" className="homeImg" />
+          <img src="https://www.theburn.com/wp-content/uploads/2019/07/Cuban.jpg" alt="Cuban flank steak meal" className="homeImg" />
+          <img src="https://i2.wp.com/www.cookedbyjulie.com/wp-content/uploads/2017/01/pastelitoscbj.jpg?resize=1024%2C682&ssl=1" alt="Hispanic guava pastry" className="homeImg" />
           <div className="txt rightTxt">
             <p className="caption">
-              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem
-              ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
-              lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+              In a mood for Cuban in a pinch? Churrasco? Pastelitos de Guayaba?
+              We've got you covered! Order online, delivered to your door.
             </p>
           </div>
         </div>
         <div className="imgTextPairContainer">
           <div className="txt rightTxt">
             <p className="caption">
-              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem
-              ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
-              lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom
+              How about vegan, gluten free, GMO-free, super food infused, dairy imitation, gourmet, artisan, fresh, locally sourced milkshakes who's proceeds go to breast cancer?
+              We have got you covered. We. Have. It. All.
             </p>
           </div>
-          <img src="" alt="alt" className="homeImg" />
-          <img src="" alt="alt" className="homeImg" />
+          <img src="https://www.howtocookthat.net/public_html/wp-content/uploads/2015/09/IMG_9456-550x413.jpg?x19907" alt="Fancy milkshakes" className="homeImg" />
+          <img src="https://3.bp.blogspot.com/-1J7gVuABMks/WmcIiqcf3oI/AAAAAAAB6KI/xuqbgsxNPtwgItZjXZdmEADoKDD_DsUzwCLcBGAs/s1600/Rainbow%2BMacaroons.jpg" alt="Rainbow macaroons" className="homeImg" />
         </div>
       </div>
       {/* <img className="logo" src={img} alt=""></img> */}
@@ -90,28 +88,10 @@ flex-direction:column;
   }
 
   .caption{
-    padding: 20% 0%;
+    padding: 20% 5%;
     height: 100%;
     font-size: 120%;
     width: 100%;
   }
 `;
-
-// const ImgOne = styles.img`
-//   height: 100%;
-//   width: 30.1%;
-//   border-style: solid;
-//   border-width: 4px;
-//   border-color: black;
-//   display: flex;
-// `;
-// const ImgTwo = styles.img`
-// width: 300px;
-// height: 300px;
-// border-style: solid;
-// border-width: 7px;
-// border-color: black;
-// display: flex;
-// `;
-
 export default Home;
