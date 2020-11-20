@@ -18,7 +18,6 @@ const initialFormErrors = {
   password: "",
 };
 
-
 const Register = () => {
   const history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -26,10 +25,10 @@ const Register = () => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    console.log('The form has recieved a change thru input')
+    console.log("The form has recieved a change thru input");
     formSchema
       .isValid(formValues)
-      .then((valid) =>{
+      .then((valid) => {
         setDisabled(!valid);
       })
       .catch((err) => alert(err));
@@ -163,7 +162,7 @@ const Register = () => {
               <h2>Email:</h2>
             </div>
             <input
-              placeholder={formErrors.email}
+              placeholder=""
               type="email"
               name="email"
               value={formValues.email}
@@ -175,7 +174,7 @@ const Register = () => {
               <h2>Username:</h2>
             </div>
             <input
-              placeholder="username"
+              placeholder=""
               type="text"
               name="username"
               value={formValues.username}
@@ -187,7 +186,7 @@ const Register = () => {
               <h2>Password:</h2>
             </div>
             <input
-              placeholder="password"
+              placeholder=""
               type="password"
               name="password"
               value={formValues.password}
@@ -201,15 +200,19 @@ const Register = () => {
   );
 };
 const Button = styled.button`
-  width: 45%;
+   width: 45%;
   color: ${(pr) => pr.theme.black};
   font-weight: 900;
-  background: ${(pr) => pr.theme.teritaryColor};
+  background: ${(pr) => pr.theme.secondary};
   margin-top: 15px;
   padding: 4%;
   border-radius: 2px;
-  border: 1px solid ${(pr) => pr.theme.black};
+  border: 2px solid ${(pr) => pr.theme.teritaryColor};
   box-shadow: 2px 4px 10px 2px;
+  &:hover {
+    border: 2px solid ${(pr) => pr.theme.secondary};
+    background: ${(pr) => pr.theme.teritaryColor};
+    color: ${(pr) => pr.theme.white};
 `;
 
 const Signup = styled.div`
@@ -219,6 +222,7 @@ const Signup = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
+  margin-top: 10%;
   padding: 5%;
   border-radius: 2%;
   border: 1px solid ${(pr) => pr.theme.primary};
@@ -251,7 +255,13 @@ const Signup = styled.div`
 `;
 const Errors = styled.div`
   padding: 2% 0;
-  background: ${(pr) => pr.theme.white};
+  /* background: rgba(225, 255, 255, 0.8); */
   color: ${(pr) => pr.theme.danger};
+  position: absolute;
+  top: 85%;
+  left: 32%;
+  padding: 1% 5%;
+  /* border-radius: 2px;
+  border: 1px solid black; */
 `;
 export default Register;
