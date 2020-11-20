@@ -7,8 +7,7 @@ const Home = () => {
     <Styles>
       <div className="container">
         <div className="head">
-          <h2>Your Favorite food Delivered to your Door</h2>
-
+          <h1>Your Favorite food Delivered to your Door</h1>
           <button>
             <Link className="link" to="">
               Very Dank Food{" "}
@@ -16,27 +15,38 @@ const Home = () => {
           </button>
         </div>
         <div className="imgTextPairContainer">
-          <img src="https://www.theburn.com/wp-content/uploads/2019/07/Cuban.jpg" alt="Cuban flank steak meal" className="homeImg" />
-          <img src="https://i2.wp.com/www.cookedbyjulie.com/wp-content/uploads/2017/01/pastelitoscbj.jpg?resize=1024%2C682&ssl=1" alt="Hispanic guava pastry" className="homeImg" />
-          <div className="txt rightTxt">
+          <div className="txt">
             <p className="caption">
               In a mood for Cuban in a pinch? Churrasco? Pastelitos de Guayaba?
               We've got you covered! Order online, delivered to your door.
             </p>
           </div>
+          <div className="homeImg tR"></div>
         </div>
         <div className="imgTextPairContainer">
-          <div className="txt rightTxt">
+          <div className="txt ">
             <p className="caption">
-              How about vegan, gluten free, GMO-free, super food infused, dairy imitation, gourmet, artisan, fresh, locally sourced milkshakes who's proceeds go to breast cancer?
-              We have got you covered. We. Have. It. All.
+              How about vegan, gluten free, GMO-free, super food infused, dairy
+              imitation, gourmet, artisan, fresh, locally sourced milkshakes
+              who's proceeds go to breast cancer? We have got you covered. We.
+              Have. It. All.
             </p>
           </div>
-          <img src="https://www.howtocookthat.net/public_html/wp-content/uploads/2015/09/IMG_9456-550x413.jpg?x19907" alt="Fancy milkshakes" className="homeImg" />
-          <img src="https://3.bp.blogspot.com/-1J7gVuABMks/WmcIiqcf3oI/AAAAAAAB6KI/xuqbgsxNPtwgItZjXZdmEADoKDD_DsUzwCLcBGAs/s1600/Rainbow%2BMacaroons.jpg" alt="Rainbow macaroons" className="homeImg" />
+          <div className="homeImg tL"></div>
+        </div>
+        <div className="imgTextPairContainer">
+          <div className="txt ">
+            <p className="caption">Delicious desserts</p>
+          </div>
+          <div className="homeImg bR"></div>
+        </div>
+        <div className="imgTextPairContainer">
+          <div className="txt ">
+            <p className="caption">and colorful snacks</p>
+          </div>
+          <div className="homeImg bL"></div>
         </div>
       </div>
-      {/* <img className="logo" src={img} alt=""></img> */}
     </Styles>
   );
 };
@@ -48,50 +58,50 @@ flex-direction:column;
   justify-content: center;
   margin:auto;
   margin-top: 3%;
+  margin-bottom:5%;
   .head{
-      width:80%;
       margin:auto;
       display:flex;
       flex-direction:column;
       height: 12vh;
   }
 
+  .link{
+    text-decoration:none;
+    color:${(pr) => pr.theme.black};
+  }
   .container{
       display:flex;
       flex-direction:column;
-      width:85%;
       margin:auto;
   }
 
   .txt{
       display:flex;
-      width:40%;
+      background-color:${(pr) => pr.theme.secondary};
+      justify-content:center;
   }
   
   .imgTextPairContainer{
-      width: 100%;
-      height: 35vh;
-      border-style: solid;
-      border-width: 2px;
-      border-color: black;
+    width:90%;
+    border:4px solid ${(pr) => pr.theme.primary};
       display: flex;
-      margin: 2% 0%;
+      flex-direction:column;
+      margin: auto;
   }
 
   .homeImg{
-    height: 100%;
-    width: 30.1%;
-    border-style: solid;
-    border-width: 4px;
-    border-color: black;
+   border:3px solid ${(pr) => pr.theme.primaryColor};
+   border-radius:2px;
     display: flex;
   }
 
   .caption{
-    padding: 20% 5%;
-    height: 100%;
-    font-size: 120%;
-    width: 100%;
+    padding: 5%;
+    font-size:1.5rem;
+    font-weight:500;
+    display:flex;
+    
   }
 `;
 export default Home;
